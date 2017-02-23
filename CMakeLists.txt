@@ -2,19 +2,18 @@
 #                                 Fifengine                                          
 #------------------------------------------------------------------------------
 
-cmake_minimum_required (VERSION 2.8.5)
+cmake_minimum_required(VERSION 2.8.5)
 
-project (fifengine C CXX)
-
+project(fifengine C CXX)
 
 #------------------------------------------------------------------------------
 #                                 Version                                          
 #------------------------------------------------------------------------------
 
-set (FIFE_MAJOR_VERSION 0)
-set (FIFE_MINOR_VERSION 4)
-set (FIFE_PATCH_VERSION 1)
-set (FIFE_VERSION_SHORT ${FIFE_MAJOR_VERSION}.${FIFE_MINOR_VERSION}.${FIFE_PATCH_VERSION})
+set(FIFE_MAJOR_VERSION 0)
+set(FIFE_MINOR_VERSION 4)
+set(FIFE_PATCH_VERSION 1)
+set(FIFE_VERSION_SHORT ${FIFE_MAJOR_VERSION}.${FIFE_MINOR_VERSION}.${FIFE_PATCH_VERSION})
 
 # check if "git" is installed
 find_program(GIT_TOOL git DOC "Git version control")
@@ -878,7 +877,7 @@ if(build-python)
 
     # Slash-Fix: Cmake would create a warning, when using the variable in FILES or DIRECTORY without changing it.
     file(TO_CMAKE_PATH ${PYTHON_SITE_PACKAGES} PYTHON_SITE_PACKAGES)
- endif(NOT DEFINED PYTHON_SITE_PACKAGES)
+  endif(NOT DEFINED PYTHON_SITE_PACKAGES)
 
   message(STATUS "    Python install directory is '${PYTHON_SITE_PACKAGES}/fife'.")
 
