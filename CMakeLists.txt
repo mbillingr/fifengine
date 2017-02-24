@@ -825,8 +825,8 @@ if(build-python)
   set (CMAKE_SWIG_FLAGS -modern -modernargs -w511 -w473 -w404)
 
   set_source_files_properties("${PROJECT_BINARY_DIR}/fife.i" PROPERTIES CPLUSPLUS ON)
+  swig_add_module(fife python "${PROJECT_BINARY_DIR}/fife.i" ${FIFE_CORE_SRC})
 
-  swig_add_module(fife python "${PROJECT_BINARY_DIR}/fife.i"  ${FIFE_CORE_SRC} ${FIFE_FCHAN_SRC})
   swig_link_libraries(fife ${PYTHON_LIBRARIES})
   swig_link_libraries(fife ${SDL2_LIBRARY}
                            ${SDL2_IMAGE_LIBRARIES}
@@ -846,7 +846,7 @@ if(build-python)
 
   if(fifechan)
     set_source_files_properties("${PROJECT_BINARY_DIR}/fifechan.i" PROPERTIES CPLUSPLUS ON)
-    swig_add_module(fifechan python "${PROJECT_BINARY_DIR}/fifechan.i")
+    swig_add_module(fifechan python "${PROJECT_BINARY_DIR}/fifechan.i" ${FIFE_FCHAN_SRC})
     swig_link_libraries(fifechan ${PYTHON_LIBRARIES})
     swig_link_libraries(fifechan ${FIFECHAN_LIBRARIES})
     swig_link_libraries(fife ${FIFECHAN_LIBRARIES})
